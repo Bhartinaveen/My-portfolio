@@ -1,59 +1,47 @@
 import React, { useState } from "react";
+import FindNowImg from "../../assets/Findnow.ai.png";
+import SweetShopImg from "../../assets/SweetShop.png";
 
 // --- DUMMY DATA ---
 const projects = [
   {
     id: 1,
-    title: "College Operations Hub ",
-    category: "(SaaS)",
-    description: "Developed a platform to manage college events, student registrations, and activity tracking with real-time updates and clean, customizable dashboards. Enhanced search and filtering for quick access to events and schedules.",
-    // IMPORTANT: Replace with actual image
-    image: "./src/assets/work_logo/college.png",
-    role: "Full Stack Website",
-    scope: "React.js, JavaScript, MongoDB,NodeJs, Tailwind CSS",
-    dotColor: "bg-red-500", 
+    title: "FindNow.ai",
+    category: "(AI Shopping )",
+    description: "Developed an AI shopping assistant using React, Node.js, and Supabase. Implemented a Puppeteer scraping engine and integrated Gemini LLM for review sentiment analysis. Architected an Express-based backend with REST APIs to automate price aggregation and provide 'Buy/No-Buy' insights. Boosted user engagement by 45% with an integrated AI Chatbot dashboard.",
+    image: FindNowImg, // Placeholder
+    role: "Full Stack Developer",
+    scope: "React.js, Node.js, ExpressJS, Supabase, Puppeteer, Gemini LLM",
+    dotColor: "bg-blue-500",
     mockupType: "laptop",
-    githubUrl: "https://github.com/Bhartinaveen/collage-mng-",
-    liveUrl: "https://vercel.com"
+    githubUrl: "https://github.com/Bhartinaveen/Findone", // Update with actual link if available
+    liveUrl: "#"  // Update with actual link if available
   },
   {
     id: 2,
-    title: "Online-Code-Editor",
-    category: "(SaaS)",
-    description: "Built a collaborative code editor with real-time syncing using Socket.IO, and designed a scalable Node.js backend to handle multiple users smoothly.",
-    image: "./src/assets/work_logo/code.png",
-    role: "Frontend Website",
-    scope: "Next.js, JavaScript, Socket.Io, Tailwind CSS",
-    dotColor: "bg-blue-500", 
+    title: "Sweet Shop",
+    category: "(E-commerce)",
+    description: "Established a responsive React.js & MongoDB platform with JWT authentication, increasing checkout completion by 25%. Engineered a Recharts dashboard for inventory monitoring, reducing stock-outs by 15%. Integrated Google AI to analyze reviews, improving customer satisfaction by 40% via sentiment-driven menu updates.",
+    image: SweetShopImg, // Placeholder
+    role: "Full Stack Developer",
+    scope: "Next.js, React.js, Tailwind CSS, REST APIs, JWT, MongoDB",
+    dotColor: "bg-yellow-500",
     mockupType: "laptop",
-    githubUrl: "https://github.com/Bhartinaveen/codedt",
-    liveUrl: "https://vercel.com"
+    githubUrl: "https://github.com/Bhartinaveen/Naveen-Incubyte", // Update with actual link if available
+    liveUrl: "https://naveen-incubyte-vrp6.vercel.app/"  // Update with actual link if available
   },
-  // {
-  //   id: 3,
-  //   title: "FinTrack - Financial Analytics",
-  //   category: "(Web App)",
-  //   description: "A comprehensive financial dashboard designed for small businesses to track expenses, generate invoices, and visualize cash flow in real-time. Features include interactive data visualization charts, automated report generation, and multi-user role management.",
-  //   image: "https://placehold.co/800x500/f3f4f6/a3a3a3?text=Financial+Dashboard",
-  //   role: "Frontend Lead",
-  //   scope: "React, Redux Toolkit, Node.js, Chart.js, MongoDB",
-  //   dotColor: "bg-orange-500", 
-  //   mockupType: "laptop",
-  //   githubUrl: "https://github.com",
-  //   liveUrl: "https://vercel.com"
-  // },
 ];
 
 // --- ICONS ---
 const Icons = {
   ArrowDown: ({ className }) => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="m6 9 6 6 6-6"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="m6 9 6 6 6-6" /></svg>
   ),
   Github: ({ className }) => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" /><path d="M9 18c-4.51 2-5-2-7-2" /></svg>
   ),
   ExternalLink: ({ className }) => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" /><polyline points="15 3 21 3 21 9" /><line x1="10" x2="21" y1="14" y2="3" /></svg>
   )
 };
 
@@ -77,13 +65,13 @@ const BackgroundMesh = () => (
 
     {/* Blob 1: Red (Top Left) */}
     <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-red-400 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-float"></div>
-    
+
     {/* Blob 2: Blue (Top Right) */}
     <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-float delay-2000"></div>
-    
+
     {/* Blob 3: Orange (Bottom Left) */}
     <div className="absolute -bottom-32 left-20 w-[600px] h-[600px] bg-orange-300 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-float delay-4000"></div>
-    
+
     {/* Blob 4: Yellow (Bottom Right) */}
     <div className="absolute bottom-0 right-20 w-[500px] h-[500px] bg-yellow-300 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-float delay-2000"></div>
 
@@ -102,7 +90,7 @@ const ProjectCard = ({ project }) => {
         bg-white/50 ensures the text is readable while showing the red/blue/orange colors behind 
       */}
       <div className="group relative bg-white/50 backdrop-blur-xl border border-white/60 shadow-xl rounded-3xl p-6 md:p-10 transition-all duration-500 hover:shadow-2xl hover:bg-white/70 hover:-translate-y-1">
-        
+
         <div className="flex flex-col lg:flex-row gap-12 items-center">
           {/* Text Content */}
           <div className="flex-1 order-2 lg:order-1 text-left w-full">
@@ -112,7 +100,7 @@ const ProjectCard = ({ project }) => {
                 {project.title}
               </h3>
             </div>
-            
+
             <p className="text-gray-700 text-lg leading-relaxed mb-8">
               {project.description}
             </p>
@@ -124,7 +112,7 @@ const ProjectCard = ({ project }) => {
                   {project.role}
                 </span>
               </div>
-              
+
               <div>
                 <h4 className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">Tech Stack</h4>
                 <div className="flex flex-wrap gap-2">
@@ -138,19 +126,19 @@ const ProjectCard = ({ project }) => {
 
               {/* ACTION BUTTONS (GitHub & Deployment) */}
               <div className="pt-6 mt-2 border-t border-gray-200/50 flex flex-wrap gap-4">
-                <a 
-                  href={project.githubUrl} 
-                  target="_blank" 
+                <a
+                  href={project.githubUrl}
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gray-900 text-white font-medium transition-all hover:bg-gray-800 hover:shadow-lg hover:-translate-y-0.5"
                 >
                   <Icons.Github className="w-5 h-5" />
                   <span>GitHub</span>
                 </a>
-                
-                <a 
-                  href={project.liveUrl} 
-                  target="_blank" 
+
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white border border-gray-200 text-gray-900 font-medium shadow-sm transition-all hover:bg-gray-50 hover:border-gray-300 hover:shadow-lg hover:-translate-y-0.5"
                 >
@@ -168,10 +156,11 @@ const ProjectCard = ({ project }) => {
               <div className="relative mx-auto transform group-hover:scale-[1.02] transition-transform duration-500 ease-out">
                 <div className="bg-gray-900 rounded-[1rem] p-1.5 shadow-2xl shadow-gray-500/40">
                   <div className="relative overflow-hidden rounded-[0.6rem]">
-                      <img
+                    <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-auto bg-white border border-gray-800"
+                      className="w-full h-64 md:h-80 object-cover object-top bg-white border border-gray-800"
+
                     />
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300"></div>
                   </div>
@@ -194,41 +183,41 @@ const Work = () => {
   const hasMoreProjects = projects.length > initiallyVisibleCount;
 
   return (
-    <section className="relative py-24 min-h-screen overflow-hidden">
+    <section id="work" className="relative py-24 min-h-screen overflow-hidden">
       {/* 1. The Colorful Background */}
       <BackgroundMesh />
 
       <div className="max-w-6xl mx-auto px-6 relative z-10">
-        
+
         {/* Header */}
         <div className="mb-24 text-center md:text-left">
-            <h2 className="text-5xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 mb-6 tracking-tighter drop-shadow-sm">
+          <h2 className="text-5xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 mb-6 tracking-tighter drop-shadow-sm">
             SELECTED WORK
-            </h2>
-            <p className="text-xl text-gray-600 font-medium max-w-2xl leading-relaxed">
-                A showcase of my recent full-stack projects, focusing on SaaS architectures and intuitive user experiences.
-            </p>
+          </h2>
+          <p className="text-xl text-gray-600 font-medium max-w-2xl leading-relaxed">
+            A showcase of my recent full-stack projects, focusing on SaaS architectures and intuitive user experiences.
+          </p>
         </div>
 
         {/* Projects List */}
         <div className="flex flex-col gap-8">
           {visibleProjects.map((project, index) => {
-             const isNewItem = showAll && index >= initiallyVisibleCount;
-             return (
-              <div 
+            const isNewItem = showAll && index >= initiallyVisibleCount;
+            return (
+              <div
                 key={project.id}
                 className={`transition-all duration-700 ease-out ${isNewItem ? 'animate-in fade-in slide-in-from-bottom-12' : ''}`}
               >
                 <ProjectCard project={project} />
               </div>
-             );
+            );
           })}
         </div>
 
         {/* Button */}
         {hasMoreProjects && (
           <div className="flex justify-center mt-20">
-            <button 
+            <button
               onClick={() => setShowAll(!showAll)}
               className="group relative bg-gray-900 text-white px-10 py-4 rounded-full font-bold flex items-center gap-3 overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-orange-500/30 active:scale-95"
             >
