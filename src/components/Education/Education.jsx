@@ -54,12 +54,12 @@ const educationData = [
     school: "IIIT Bhagalpur",
     degree: "Btech in Computer Science Engineering",
     date: "Nov 2022 - May 2026",
-    cgpa: "7.36/10",
-    percentage: "73.6%",
+    cgpa: "7.49/10",
+    percentage: "74.9%",
     // Changed to a single string value for Current SGPA
-    sgpa: "8.25/10", 
+    sgpa: "8.47/10",
     desc: "Specialized in Computer Science Engineering with a focus on software development and modern web technologies, and served as the lead developer for the university innovation lab.",
-    img: "https://www.iiitbh.ac.in/convocation/assets/clglogo-12luq4fJ.jpg", 
+    img: "https://www.iiitbh.ac.in/convocation/assets/clglogo-12luq4fJ.jpg",
   },
   {
     id: 2,
@@ -137,17 +137,17 @@ const TimelineItem = ({ edu, index }) => {
       {/* Content Card */}
       <div className={`w-full pl-16 md:pl-0 md:w-5/12 ${isVisible ? "opacity-100" : "opacity-0"}`}>
         <div className="group relative">
-          
+
           {/* Card Body - Dark Red Theme #662222 */}
           <div className="relative p-6 md:p-8 rounded-2xl bg-[#662222] border border-white/10 shadow-xl shadow-red-900/20 hover:shadow-2xl hover:shadow-red-900/40 transition-all duration-300">
-            
+
             {/* Header: Image + Title */}
             <div className="flex flex-col sm:flex-row gap-5 mb-5 items-start sm:items-center">
               <div className="w-14 h-14 md:w-16 md:h-16 rounded-xl overflow-hidden shrink-0 border border-white/20 shadow-sm group-hover:scale-105 transition-transform duration-500">
-                <img 
-                  src={edu.img} 
-                  alt={edu.school} 
-                  className="w-full h-full object-cover" 
+                <img
+                  src={edu.img}
+                  alt={edu.school}
+                  className="w-full h-full object-cover"
                 />
               </div>
               <div>
@@ -168,20 +168,20 @@ const TimelineItem = ({ edu, index }) => {
 
             {/* Stats Row */}
             <div className="grid grid-cols-2 gap-3 mb-6">
-               <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-black/20 border border-white/10 transition-colors">
-                  <ChartBar className="w-4 h-4 text-rose-300" />
-                  <div className="flex flex-col">
-                    <span className="text-[10px] text-gray-300 uppercase font-bold tracking-wider">CGPA</span>
-                    <span className="text-sm font-bold text-white">{edu.cgpa}</span>
-                  </div>
-               </div>
-               <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-black/20 border border-white/10 transition-colors">
-                  <Percent className="w-4 h-4 text-orange-300" />
-                  <div className="flex flex-col">
-                    <span className="text-[10px] text-gray-300 uppercase font-bold tracking-wider">Percentage</span>
-                    <span className="text-sm font-bold text-white">{edu.percentage}</span>
-                  </div>
-               </div>
+              <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-black/20 border border-white/10 transition-colors">
+                <ChartBar className="w-4 h-4 text-rose-300" />
+                <div className="flex flex-col">
+                  <span className="text-[10px] text-gray-300 uppercase font-bold tracking-wider">CGPA</span>
+                  <span className="text-sm font-bold text-white">{edu.cgpa}</span>
+                </div>
+              </div>
+              <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-black/20 border border-white/10 transition-colors">
+                <Percent className="w-4 h-4 text-orange-300" />
+                <div className="flex flex-col">
+                  <span className="text-[10px] text-gray-300 uppercase font-bold tracking-wider">Percentage</span>
+                  <span className="text-sm font-bold text-white">{edu.percentage}</span>
+                </div>
+              </div>
             </div>
 
             {/* Current SGPA Section (Conditional Rendering) */}
@@ -214,17 +214,17 @@ const Education = () => {
   return (
     // Background: Changed to #F7F4EA (Light Beige)
     <section id="education" className="relative min-h-screen w-full py-24 overflow-hidden bg-[#F7F4EA]">
-      
+
       {/* --- BACKGROUND EFFECTS --- */}
       {/* Subtle White Mesh Grid for texture */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000010_1px,transparent_1px),linear-gradient(to_bottom,#00000010_1px,transparent_1px)] bg-[size:40px_40px] opacity-10"></div>
-      
+
       {/* Soft Ambient Light Blobs */}
       <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-white/60 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2" />
       <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-white/60 rounded-full blur-[100px] translate-x-1/2 translate-y-1/2" />
 
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 z-10">
-        
+
         {/* Section Header */}
         <div className="text-center mb-24">
           <div className="inline-block mb-3 px-4 py-1.5 rounded-full border border-gray-900/5 bg-white/50 backdrop-blur-md">
