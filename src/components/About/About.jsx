@@ -41,7 +41,7 @@ const About = () => {
     {
       name: 'CodeForces',
       icon: <SiCodeforces />,
-      url: 'https://codeforces.com/profile/Bhartinaveen',
+      url: 'https://codeforces.com/profile/bhartiiit2003',
       hoverColor: 'hover:bg-[#1f8dd6] hover:border-[#1f8dd6] hover:text-white',
     },
   ];
@@ -150,7 +150,7 @@ const About = () => {
           {/* UPDATED: Removed 'pt-2' to move button higher */}
           <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
             <a
-              href="https://drive.google.com/file/d/1nQW59dNgXFr_e7OBkYtHdDCFmutQXafp/view?usp=drivesdk"
+              href="https://drive.google.com/file/d/1FIYNzWAAKKEY7xxR_yzr_xexytoszLKb/view?usp=drivesdk"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative inline-flex items-center justify-center px-8 py-3.5 text-base font-bold text-white transition-all duration-200 bg-slate-900 dark:bg-slate-900 rounded-full hover:bg-slate-800 hover:shadow-lg hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-900"

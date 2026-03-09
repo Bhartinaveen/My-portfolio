@@ -1,4 +1,7 @@
 import React from "react";
+// Since this component is deep in the structure, public pathing may fail dynamically.
+// We explicitly import it here to guarantee Vite resolves it during the build process.
+import ttnLogo from "/logo1.jpg";
 
 // --- Icons ---
 
@@ -113,6 +116,16 @@ const StructuralGridBackground = () => (
 
 // Mock Data
 const experiences = [
+  {
+    id: 4,
+    role: "Software Engineering Intern (Data Engineer)",
+    company: "To The New",
+    date: "Jan 2026 – Mar 2026",
+    desc: "Optimized legacy data pipelines by redesigning ETL workflows and improving data processing performance, reducing data latency by 40% and increasing data availability by 30%. Spearheaded the redesign of data pipelines, which eliminated 70+ bottlenecks, improved data delivery speeds by 50%, and decreased execution time by 46% across key data streams.",
+    skills: ["Apache Spark", "Hadoop", "MapReduce", "Apache Airflow", "Apache Kafka", "AWS", "Docker", "Data Warehouses"],
+    img: ttnLogo, // Using the explicit static import 
+    certificate: "#", // Add your real certificate link here
+  },
   {
     id: 1,
     role: "Full Stack Developer",
